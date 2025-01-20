@@ -28,7 +28,6 @@ function ConvertHandler() {
       }
       values[0] = parseFloat(values[0])
       values[1] = parseFloat(values[1])
-      console.log("hey")
       result = parseFloat((values[0]/values[1]).toFixed(5)) 
     }
 
@@ -90,23 +89,23 @@ function ConvertHandler() {
     
     switch (unit) {
       case "mi":
-        result = "mile(s)";
+        result = "miles";
         break;
       case "km":
-        result = "kilometer(s)";
+        result = "kilometers";
         break;
       case "lbs":
-        result = "pound(s)";
+        result = "pounds";
         break;
       case "kg":
-        result = "kilogram(s)";
+        result = "kilograms";
         break;
       case "gal":
-        result = "gallon(s)";
+        result = "gallons";
         break; 
       case "l":
       case "L":
-        result = "liter(s)";
+        result = "liters";
         break;
       default:
         break;
