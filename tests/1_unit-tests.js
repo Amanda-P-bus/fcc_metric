@@ -52,7 +52,6 @@ suite("Unit Tests", function() {
     });
   });
   
-////////////////
   suite("Function convertHandler.getUnit(input)", function() {
     test("For Each Valid Unit Inputs", function(done) {
     
@@ -72,7 +71,6 @@ suite("Unit Tests", function() {
     });
   });
 
-//changed "l" to "L" to help pass
   suite("Function convertHandler.getReturnUnit(initUnit)", function() {
     test("For Each Valid Unit Inputs", function(done) {
       let input = ["gal", "L", "mi", "km", "lbs", "kg"];
@@ -103,9 +101,10 @@ suite("Unit Tests", function() {
   });
 
   suite("Function convertHandler.convert(num, unit)", function() {
-    test("Gal to L", function(done) {
-      let input = [5, "gal"];
-      let expected = 18.9271;
+    test("gal to L", function(done) {
+      let input = [5, "gal"]
+      let expected = 18.92705
+
       assert.approximately(
         convertHandler.convert(input[0], input[1]),
         expected,

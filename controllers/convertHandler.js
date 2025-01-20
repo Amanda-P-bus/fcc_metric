@@ -11,7 +11,7 @@ let testReg = /[a-z]+|[^a-z]+/gi
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result;
+    let result;
     
     result = input.match(testReg)[0];
     
@@ -118,38 +118,46 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    var result;
-       
+    let result;
+
   if (initUnit === "mi")
-    {let getKm = eval(initNum*miToKm).toFixed(5)
+    {let getKm = parseFloat((initNum*miToKm), 5)
        result = getKm
      return result
      }
  
  if (initUnit === "km")
-     { let getMi = eval(initNum/miToKm).toFixed(5)
+     { let getMi = parseFloat((initNum/miToKm),5)
        result = getMi
        return result 
      } 
  
  if (initUnit === "gal")
-     { let getLiter = eval(initNum*galToL).toFixed(5)
+     { let getLiter = parseFloat((initNum*galToL),5)
        result = getLiter
+    /*
+       console.log(isNaN(result) + "res");
+       console.log(typeof result)
+      console.log(typeof parseFloat(initNum*galToL));
+      console.log(typeof parseFloat((initNum*galToL), 5));
+    */
+  
+      
        return result 
      }
  
  if (initUnit === "L" || initUnit === "l")
-   { let getGallon = eval(initNum/galToL).toFixed(5)
+   { let getGallon = parseFloat((initNum/galToL),5)
      result = getGallon
      return result 
    }
  if (initUnit === "lbs")
-   { let getPounds = eval(initNum*lbsToKg).toFixed(5)
+   { let getPounds = parseFloat((initNum*lbsToKg),5)
      result = getPounds
      return result 
    }
  if (initUnit === "kg")
-   { let getKgs = eval(initNum/lbsToKg).toFixed(5)
+   { let getKgs = parseFloat((initNum/lbsToKg),5)
      result = getKgs
      return result 
    }  
